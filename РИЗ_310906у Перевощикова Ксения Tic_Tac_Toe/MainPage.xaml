@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="РИЗ_310906у_Перевощикова_Ксения_Tic_Tac_Toe.MainPage">
+
+    <StackLayout Margin="20" VerticalOptions="CenterAndExpand">
+
+        <Label Text="Крестики-нолики" TextTransform="Uppercase" HorizontalOptions="Center" FontSize="20"/>
+        <Button Text="Начать игру" Clicked="OnStartNewGameClicked"/>
+        <Button Text="Посмотреть историю игр" Clicked="OnGamesHistoryShowClicked"/>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Количество строк: " TextTransform="Uppercase" HorizontalOptions="Center"/>
+            <Label x:Name="RowCountLabel" Text="3" TextTransform="Uppercase" HorizontalOptions="Center"/>
+        </StackLayout>
+
+        <Slider x:Name="RowCountSlider" Maximum="5" Minimum="3" ValueChanged="OnSliderRowCountChanged"/>
+
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="РИЗ_310906у_Перевощикова_Ксения_Tic_Tac_Toe.GamesHistoryPage"      >
+
+    <StackLayout Margin="20" VerticalOptions="Center">
+        <Grid x:Name="gridGamesHistory" HorizontalOptions="Center" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Дата игры" Grid.Column="0" FontSize="20"/>
+            <Label Text="Окончание игры" Grid.Column="1" FontSize="20"/>
+        </Grid>
+        <ListView ItemsSource="{Binding GamesHistoryElements}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="{Binding GameDate}"/>
+                            <Label Text="{Binding GameResult}" Grid.Column="1"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Вернуться в меню" TextColor="White" Clicked="OnReturnToMainMenuClicked"/>
+    </StackLayout>
+</ContentPage>
